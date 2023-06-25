@@ -239,14 +239,7 @@
       return str.replace(/[\s]+/gmi, '[\\s]+');
     }
     createAccuracyRegExp(str) {
-      let acc = this.opt.accuracy,
-        val = typeof acc === 'string' ? acc : acc.value,
-        ls = typeof acc === 'string' ? [] : acc.limiters,
-        lsJoin = '';
-      ls.forEach(limiter => {
-        lsJoin += `|${this.escapeStr(limiter)}`;
-      });
-      return `(^|\\s${lsJoin})(${str})(?=$|\\s${lsJoin})`;
+      return `(^|\\s)(${str})(?=$|\\s)`;
     }
   }
 

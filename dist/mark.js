@@ -320,15 +320,7 @@
     }, {
       key: "createAccuracyRegExp",
       value: function createAccuracyRegExp(str) {
-        var _this = this;
-        var acc = this.opt.accuracy,
-          val = typeof acc === 'string' ? acc : acc.value,
-          ls = typeof acc === 'string' ? [] : acc.limiters,
-          lsJoin = '';
-        ls.forEach(function (limiter) {
-          lsJoin += "|".concat(_this.escapeStr(limiter));
-        });
-        return "(^|\\s".concat(lsJoin, ")(").concat(str, ")(?=$|\\s").concat(lsJoin, ")");
+        return "(^|\\s)(".concat(str, ")(?=$|\\s)");
       }
     }]);
     return RegExpCreator;

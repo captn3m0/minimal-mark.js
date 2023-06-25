@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import cleanup from 'rollup-plugin-cleanup';
+// import cleanup from 'rollup-plugin-cleanup';
 import babel from 'rollup-plugin-babel';
 import {terser} from "rollup-plugin-terser";
 
@@ -48,10 +48,10 @@ const output = {
     resolve(),
     commonjs(),
     // remove non-license comments
-    cleanup({
-      comments: /^!/,
-      maxEmptyLines: 0
-    })
+    // cleanup({
+    //   comments: /^!/,
+    //   maxEmptyLines: 0
+    // })
   ],
   pluginsES5 = (() => {
     const newPlugins = plugins.slice();
