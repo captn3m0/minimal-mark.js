@@ -76,10 +76,7 @@ class Mark {
   get iterator() {
     // always return new instance in case there were option changes
     return new DOMIterator(
-      this.ctx,
-      this.opt.iframes,
-      this.opt.exclude,
-      this.opt.iframesTimeout
+      this.ctx
     );
   }
 
